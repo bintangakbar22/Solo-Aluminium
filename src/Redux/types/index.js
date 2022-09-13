@@ -1,0 +1,16 @@
+export const FETCH_LOGIN = '@FETCH_LOGIN';
+export const LOGOUT = '@LOGOUT';
+export const GET_USER_DATA = '@GET_USER_DATA';
+export const UPDATE_USER_DATA = '@UPDATE_USER_DATA';
+export const CONNECTED = '@CONNECTED';
+export const NOT_CONNECTED = '@NOT_CONNECTED';
+export const GET_CATEGORY = '@GET_CATEGORY';
+export const GET_PRODUCT = '@GET_PRODUCT';
+export const GET_TRANSACTIONS = '@GET_TRANSACTIONS';
+export const GET_ALL_USER = '@GET_ALL_USER';
+export const GET_ALL_OUT_PRODUCTS = '@GET_ALL_OUT_PRODUCTS';
+export const GET_ALL_IN_PRODUCTS = '@GET_ALL_IN_PRODUCTS';
+export const GET_TOTAL_EXPENSE = '@GET_TOTAL_EXPENSE';
+export const GET_TOTAL_INCOME = '@GET_TOTAL_INCOME';
+export const FINANCE_SCREEN = '@FINANCE_SCREEN';
+
