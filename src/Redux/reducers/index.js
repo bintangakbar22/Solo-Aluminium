@@ -29,7 +29,7 @@ const initialState = {
   allProductsOut:[],
   totalIncome:0,
   totalExpense:0,
-  financeScreen:'debit',
+  financeScreen:'Product',
   transactions:[]
 };
 

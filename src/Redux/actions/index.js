@@ -467,19 +467,36 @@ export const deleteCategory = (AccessToken,id) => {
           type: 'success',
           text1: 'Category Successfully Deleted!',
         });
-      })
+      }).catch(function (error) {
+          console.log(error.response.data.line)
+          if(error.response.data.line==712){
+            Toast.show({
+              type: 'error',
+              text1: 'Cant delete this category because there is a product ',
+            });
+          }else{
+            Toast.show({
+              type: 'error',
+              text1: 'Unknown error',
+            });
+          }
+          
+      });
   };
 };
 
 export const createTransaction = (data,AccessToken) => {
   return async dispatch => {
-    const {type,quantity,product_id} = data;
+    const {type,quantity,product_id,keterangan,transtype,total} = data;
     console.log("act ",data)
     await axios
       .post(URLAPI + 'transaction', {
         type:type,
         quantity:quantity,
-        product_id:product_id
+        product_id:product_id,
+        keterangan:keterangan,
+        transtype:transtype,
+        total:total
       },{
         headers: {
           Accept: 'application/json',
@@ -503,12 +520,15 @@ export const createTransaction = (data,AccessToken) => {
 
 export const updateTransaction = (data,AccessToken) => {
   return async dispatch => {
-    const {type,quantity,product_id,id} = data;
+    const {type,quantity,product_id,id,keterangan,transtype,total} = data;
     await axios
       .post(URLAPI + 'transaction/'+id+'/update', {
         type:type,
         quantity:quantity,
         product_id:product_id,
+        keterangan:keterangan,
+        transtype:transtype,
+        total:total
       },{
         headers: {
           Accept: 'application/json',
@@ -776,5 +796,6 @@ export const rupiah = number => {
   
   return thousand;
 };
+
 
 
